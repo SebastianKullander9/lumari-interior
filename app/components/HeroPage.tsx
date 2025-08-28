@@ -2,17 +2,34 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollSmoother } from "gsap/ScrollSmoother";
+
+gsap.registerPlugin(useGSAP,ScrollTrigger,ScrollSmoother);
 
 const videos = [
 	{ video: "/splash-page/jesus.mp4", customStyles: "object-[35%_0%] lg:object-[0%_0%]" },
 	{ video: "/splash-page/behind-curtain.mp4", customStyles: "" },
 	{ video: "/splash-page/yellow-computer.mp4", customStyles: "xl:object-bottom" },
 	{ video: "/splash-page/smelling-flower.mp4", customStyles: "" }
-]
+];
 
 export default function HeroPage() {
 	const videoRef = useRef<HTMLVideoElement>(null);
+	const heroRef = useRef<HTMLDivElement>(null);
 	const [index, setIndex] = useState(0);
+
+	useGSAP(() => {
+		ScrollTrigger.create({
+			trigger: heroRef.current,
+			start: "top top",
+			end: "bottom top",
+			pin: true,
+			pinSpacing: false,
+		})
+	})
 
 	useEffect(() => {
 		const interval = setInterval(() => {
@@ -30,7 +47,7 @@ export default function HeroPage() {
 	}, [index])
 
 	return (
-		<section className="relative w-full h-screen overflow-hidden">
+		<section ref={heroRef} className="relative w-full h-screen overflow-hidden">
 			{videos.map((element, i) => (
 				<video
 					key={i}
@@ -47,13 +64,13 @@ export default function HeroPage() {
             <nav className="absolute flex items-center justify-between top-0 w-full h-14 sm:h-19 font-medium text-[var(--color-baby-powder)] p-4 sm:p-8 z-10" style={{ fontSize: "clamp(0.75rem, 2vw, 1.1rem)" }}>
                 <div className="flex gap-8">
                     <Link href="" className="cursor-pointer hover:text-[var(--color-baby-powder-hover)] transition-colors duration-400">
-                        <p>About</p>
+                        <p>About us</p>
                     </Link>
                     <Link href="" className="cursor-pointer hover:text-[var(--color-baby-powder-hover)] transition-colors duration-400">
                         <p>Services</p>
                     </Link>
                     <Link href="" className="cursor-pointer hover:text-[var(--color-baby-powder-hover)] transition-colors duration-400">
-                        <p>Designed Spaces</p>
+                        <p>Designed spaces</p>
                     </Link>
                 </div>
                 <div>
