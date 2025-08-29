@@ -46,7 +46,7 @@ export default function About() {
                 trigger: aboutTextRef.current,
                 start: "top bottom",
                 end: "bottom top",
-                pinSpacing: false,
+                pinSpacing: true,
             });
 
             images.forEach((image, index) => {
@@ -148,12 +148,12 @@ export default function About() {
                         </div>
 
                         <div className="textAnimationsTest absolute p-4 lg:p-8 h-screen w-screen lg:top-1/10">
-                            <h1 className="font-semibold mb-8 mt-16" style={{ fontSize: "clamp(2rem, 5vw, 4rem)" }}>
+                            <h1 className="mb-8 mt-16" style={{ fontSize: "clamp(2rem, 5vw, 4rem)" }}>
                                 {headingWords.map((word, i) => (
                                     <span key={i} className="staggered-word inline-block mr-2 opacity-0">{word}</span>
                                 ))}
                             </h1>
-                            <p className="max-w-6/10 lg:max-w-2/4 text-md lg:text-2xl text-gray-700 leading-6">
+                            <p className="max-w-6/10 lg:max-w-2/4 text-md lg:text-2xl text-gray-700 leading-6 lg:leading-8">
                                 {textWords.map((sentence, i) => (
                                     <span key={i} className="staggered-line inline-block opacity-0 mr-[5px] lg:mr-[10px]">{sentence}</span>
                                 ))}
@@ -163,7 +163,7 @@ export default function About() {
                 </div>
             </section>
 
-            <section ref={aboutTextRef} className="relative w-full h-[100vh] bg-red-500/50">
+            <section ref={aboutTextRef} className="relative w-full h-[100vh]">
                 <div className="w-screen h-screen absolute top-0 left-0">
                 </div>
             </section>

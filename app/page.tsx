@@ -6,7 +6,7 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
-import AboutText from "./components/AboutText";
+import Services from "./components/Services";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother);
 
@@ -27,6 +27,7 @@ export default function Home() {
 				<div id="smooth-content">
 					<HeroPage />
 					<About />
+					<Services />
 				</div>
 			</div>
 		</section>
