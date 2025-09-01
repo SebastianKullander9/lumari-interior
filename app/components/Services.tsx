@@ -47,7 +47,7 @@ export default function Services() {
             ScrollTrigger.create({
                 trigger: section,
                 start: i === 0 ? "top top" : "top-=120px top",
-                end: i === sectionRefs.current.length - 1 ? "bottom top" : "max",
+                end: i === sectionRefs.current.length - 1 ? "bottom bottom" : "max",
                 pin: true,
                 pinSpacing: false,
             });

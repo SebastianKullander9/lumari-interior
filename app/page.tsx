@@ -7,6 +7,7 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import Services from "./components/Services";
+import SelectedWorks from "./components/SelectedWorks";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother);
 
@@ -28,6 +29,7 @@ export default function Home() {
 					<HeroPage />
 					<About />
 					<Services />
+					<SelectedWorks />
 				</div>
 			</div>
 		</section>
