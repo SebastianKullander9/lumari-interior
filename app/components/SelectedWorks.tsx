@@ -68,7 +68,6 @@ export default function SelectedWorks() {
     const selectedWorksRef = useRef<HTMLDivElement>(null);
     const svgRef = useRef<SVGSVGElement>(null);
     const sectionRef2 = useRef<HTMLDivElement>(null);
-    const sectionRef3 = useRef<HTMLDivElement>(null);
 
     const svgTriggersRef = useRef<ScrollTrigger[]>([]);
 
@@ -157,15 +156,7 @@ export default function SelectedWorks() {
         ScrollTrigger.create({
             trigger: sectionRef2.current,
             start: "top top",
-            end: "max",
-            pin: true,
-            pinSpacing: false,
-        });
-
-        ScrollTrigger.create({
-            trigger: sectionRef3.current,
-            start: "top top",
-            end: "bottom top",
+            end: "bottom+=100vh top",
             pin: true,
             pinSpacing: false,
         });
@@ -304,9 +295,6 @@ export default function SelectedWorks() {
             </section>
 
             <section ref={sectionRef2} className="relative w-screen h-[100vh]">
-            </section>
-
-            <section ref={sectionRef3} className="relative w-screen h-[100vh]">
             </section>
         </>
     );

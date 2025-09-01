@@ -8,6 +8,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import Services from "./components/Services";
 import SelectedWorks from "./components/SelectedWorks";
+import Footer from "./components/Footer";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother);
 
@@ -30,6 +31,7 @@ export default function Home() {
 					<About />
 					<Services />
 					<SelectedWorks />
+					<Footer />
 				</div>
 			</div>
 		</section>

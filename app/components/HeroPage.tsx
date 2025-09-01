@@ -28,8 +28,8 @@ export default function HeroPage() {
 			end: "bottom top",
 			pin: true,
 			pinSpacing: false,
-		})
-	})
+		});
+	});
 
 	useEffect(() => {
 		const interval = setInterval(() => {
